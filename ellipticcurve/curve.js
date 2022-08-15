@@ -68,6 +68,19 @@ let prime256v1 = new CurveFp(
 );
 
 // A,B,P,Q,X,Y
+let secp384r1 = new CurveFp(
+    BigInt("fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffff0000000000000000fffffffc", 16),
+    BigInt("b3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aef", 16),
+    BigInt("fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffff0000000000000000ffffffff", 16),
+    BigInt("ffffffffffffffffffffffffffffffffffffffffffffffffc7634d81f4372ddf581a0db248b0a77aecec196accc52973", 16),
+    BigInt("aa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7", 16),
+    BigInt("3617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5f", 16),
+    "secp384r1",
+    [1, 3, 132, 0, 34],
+     "P-384"
+);
+
+// A,B,P,Q,X,Y
 let brainpoolP224r1 = new CurveFp(
     BigInt("68A5E62CA9CE6C1C299803A6C1530B514E182AD8B0042A59CAD29F43", 16),
     BigInt("2580F63CCFE44138870713B1A92369E33E2135D266DBB372386C400B", 16),
@@ -129,9 +142,12 @@ let brainpoolP512r1 = new CurveFp(
 
 let p256 = prime256v1;
 
+let p384 = secp384r1;
+
 let supportedCurves = [
     secp256k1,
     prime256v1,
+    secp384r1,
     brainpoolP224r1,
     brainpoolP256r1,
     brainpoolP320r1,
@@ -148,10 +164,12 @@ exports.CurveFp = CurveFp;
 exports.curvesByOid = curvesByOid;
 exports.secp256k1 = secp256k1;
 exports.prime256v1 = prime256v1;
+exports.secp384r1 = secp384r1;
 exports.brainpoolP224r1 = brainpoolP224r1;
 exports.brainpoolP256r1 = brainpoolP256r1;
 exports.brainpoolP320r1 = brainpoolP320r1;
 exports.brainpoolP384r1 = brainpoolP384r1;
 exports.brainpoolP512r1 = brainpoolP512r1;
 exports.p256 = p256;
+exports.p384 = p384;
 exports.supportedCurves = supportedCurves;
