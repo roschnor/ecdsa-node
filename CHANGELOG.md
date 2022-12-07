@@ -14,6 +14,10 @@ Given a version number MAJOR.MINOR.PATCH, increment:
 
 ## [Unreleased]
 
+## [1.1.5] - 2022-08-31
+### Fixed
+- unset variables on math and der files
+
 ## [1.1.4] - 2021-11-09
 ### Fixed
 - point at infinity verification in signature and public key
